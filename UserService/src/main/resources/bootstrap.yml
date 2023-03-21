@@ -1,0 +1,18 @@
+nacos:
+  namespace: zhangfx-1
+  group: geologic
+  server-addr: 192.168.235.40:8848
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
+      config:
+        server-addr: ${nacos.server-addr}
+        file-extension: yaml
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
